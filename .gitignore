@@ -9,6 +9,9 @@
 *.user
 *.userosscache
 *.sln.docstates
+SpotifyStatus/Properties/launchSettings.json
+
+build
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

@@ -1,0 +1,31 @@
+{
+    "$type": "MixItUp.Base.Model.Commands.EventCommandModel, MixItUp.Base",
+    "EventType": 100,
+    "ID": "2e377279-7337-47e5-a288-694c348254f1",
+    "Name": "Application Launch",
+    "Type": 2,
+    "IsEnabled": true,
+    "Unlocked": false,
+    "IsEmbedded": false,
+    "GroupName": null,
+    "Triggers": [],
+    "Requirements": {
+        "$type": "MixItUp.Base.Model.Requirements.RequirementsSetModel, MixItUp.Base",
+        "Requirements": []
+    },
+    "Actions": [
+        {
+            "$type": "MixItUp.Base.Model.Actions.ExternalProgramActionModel, MixItUp.Base",
+            "FilePath": "SpotifyStatus.exe",
+            "Arguments": "--title-file=\"./title.txt\" --artist-file=\"./artist.txt\" --refresh-rate=2",
+            "ShowWindow": true,
+            "ShellExecute": false,
+            "WaitForFinish": false,
+            "SaveOutput": false,
+            "ID": "2bbf18f7-bee7-4c6c-b783-76e3487296b8",
+            "Name": "Launch Spotify Status",
+            "Type": 3,
+            "Enabled": true
+        }
+    ]
+}
