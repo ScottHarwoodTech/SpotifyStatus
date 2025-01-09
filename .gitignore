@@ -10,7 +10,7 @@
 *.userosscache
 *.sln.docstates
 SpotifyStatus/Properties/launchSettings.json
-
+*.zip
 build
 
 # User-specific files (MonoDevelop/Xamarin Studio)

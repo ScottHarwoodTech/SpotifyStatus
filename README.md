@@ -9,10 +9,16 @@ You can download this application from the releases page [here](https://github.c
 2. Download the "SpotifyStatus.zip" file
 3. Extract all files to a safe place
 
+## Running warning
+When you run the executable you will get a Windows Defender Smart Screen warning because the executable is not signed. They are not signed because request signing is $500 a year and I'm not made of money. You can click "more-info" then "run anyway". 
+
+If you are uncomfortable I suggest downloading the source code and compiling it from source yourself.
+
+
 ## Starting
 
 ### Stdout Mode
-Double click on the `SpotifyStatus.exe` file to run the program in `stdout` mode which means it will output the Artist and Song once a second.
+Double click on the `SpotifyStatus.exe` file to run the program in `stdout` mode which means it will output the Artist and Song and instantly quit
 
 
 ### File Mode
