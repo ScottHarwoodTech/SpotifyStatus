@@ -23,7 +23,8 @@ namespace SpotifyStatus
         public static string TITLE_FILE = "title-file";
         public static string ARTIST_FILE = "artist-file";
         public static string REFRESH_RATE = "refresh-rate";
-        public static string[] ACCEPTABLE_PARAMETERS = [ARTIST_FILE, TITLE_FILE, REFRESH_RATE];
+        public static string OUTPUT_FILE = "output-file";
+        public static string[] ACCEPTABLE_PARAMETERS = [ARTIST_FILE, TITLE_FILE, REFRESH_RATE, OUTPUT_FILE];
         public static string HELP_STRING = "";
         static int Main(string[] args)
         {
@@ -75,6 +76,11 @@ namespace SpotifyStatus
             if (!parameters.ContainsKey(TITLE_FILE) && !parameters.ContainsKey(ARTIST_FILE))
             {
                 Console.WriteLine(s.artist + " - " + s.title); // Output to stdout if title file and artist file not provided
+            }
+
+            if (parameters.ContainsKey(OUTPUT_FILE))
+            {
+                UpdateFile(parameters[OUTPUT_FILE], s.artist + " - " + s.title);
             }
 
             if (parameters.ContainsKey(TITLE_FILE))

@@ -17,7 +17,7 @@
         {
             "$type": "MixItUp.Base.Model.Actions.ExternalProgramActionModel, MixItUp.Base",
             "FilePath": "SpotifyStatus.exe",
-            "Arguments": "--title-file=\"./title.txt\" --artist-file=\"./artist.txt\" --refresh-rate=2",
+            "Arguments": "--title-file=\"./title.txt\" --artist-file=\"./artist.txt\" --refresh-rate=2 --output-file=\"./now-playing.txt\"",
             "ShowWindow": true,
             "ShellExecute": false,
             "WaitForFinish": false,

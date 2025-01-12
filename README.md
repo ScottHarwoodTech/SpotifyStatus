@@ -14,6 +14,13 @@ When you run the executable you will get a Windows Defender Smart Screen warning
 
 If you are uncomfortable I suggest downloading the source code and compiling it from source yourself.
 
+## Ensure you have the valid runtime installed
+
+This requires .net 8.0 runtime installed which can be downloaded from here: 
+
+https://dotnet.microsoft.com/en-us/download/dotnet/8.0/runtime?cid=getdotnetcore&os=windows&arch=x64 
+
+Ensure you download x64 for "run console applications"
 
 ## Starting
 
@@ -33,14 +40,14 @@ You can exit the application by pressing `control+c` this will automatically exi
 You can set the custom options such as:
 
 - `tile-file` Which file to write the title of the song to
-
 - `artist-file` Which file to write the artist of the song to
-
+- `output-file` Which file to write the full song and title to a single file
 - `refresh-rate` How frequently to update the song (defaults to one second)
+
 
 These options can be changed in `FileMode.bat` (right click then `edit`) to point to custom files they can also be passed to the executable as arguments like so:
 
-`SpotifyStatus.exe --title-file="./title.txt" --artist-file="./artist.txt" --refresh-rate=2`
+`SpotifyStatus.exe --title-file="./title.txt" --artist-file="./artist.txt" --refresh-rate=2 --output-file="./now-playing.txt"`
 
 ## OBS
 
