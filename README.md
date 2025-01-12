@@ -43,11 +43,13 @@ You can set the custom options such as:
 - `artist-file` Which file to write the artist of the song to
 - `output-file` Which file to write the full song and title to a single file
 - `refresh-rate` How frequently to update the song (defaults to one second)
+- `postfix` What to post after the text in each file (defaults to " ")
+- `prefix` What to post before the text in each file (defaults to "")
 
 
 These options can be changed in `FileMode.bat` (right click then `edit`) to point to custom files they can also be passed to the executable as arguments like so:
 
-`SpotifyStatus.exe --title-file="./title.txt" --artist-file="./artist.txt" --refresh-rate=2 --output-file="./now-playing.txt"`
+`SpotifyStatus.exe --title-file="./title.txt" --artist-file="./artist.txt" --refresh-rate=2 --output-file="./now-playing.txt" --prefix="" --postfix=" "`
 
 ## OBS
 

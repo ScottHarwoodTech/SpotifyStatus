@@ -24,7 +24,10 @@ namespace SpotifyStatus
         public static string ARTIST_FILE = "artist-file";
         public static string REFRESH_RATE = "refresh-rate";
         public static string OUTPUT_FILE = "output-file";
-        public static string[] ACCEPTABLE_PARAMETERS = [ARTIST_FILE, TITLE_FILE, REFRESH_RATE, OUTPUT_FILE];
+        public static string PREFIX = "prefix";
+        public static string POSTFIX = "postfix";
+
+        public static string[] ACCEPTABLE_PARAMETERS = [ARTIST_FILE, TITLE_FILE, REFRESH_RATE, OUTPUT_FILE, PREFIX, POSTFIX];
         public static string HELP_STRING = "";
         static int Main(string[] args)
         {
@@ -72,30 +75,33 @@ namespace SpotifyStatus
         private static void Update(Dictionary<string, string> parameters)
         {
             SpotifySong s = GetTitle();
+            string prefix = parameters.GetValueOrDefault(PREFIX, "");
+            string postfix = parameters.GetValueOrDefault(POSTFIX, " ");
 
-            if (!parameters.ContainsKey(TITLE_FILE) && !parameters.ContainsKey(ARTIST_FILE))
+
+            if (!parameters.ContainsKey(TITLE_FILE) && !parameters.ContainsKey(ARTIST_FILE) && !parameters.ContainsKey(OUTPUT_FILE))
             {
                 Console.WriteLine(s.artist + " - " + s.title); // Output to stdout if title file and artist file not provided
             }
 
             if (parameters.ContainsKey(OUTPUT_FILE))
             {
-                UpdateFile(parameters[OUTPUT_FILE], s.artist + " - " + s.title);
+                UpdateFile(parameters[OUTPUT_FILE], s.artist + " - " + s.title, prefix, postfix);
             }
 
             if (parameters.ContainsKey(TITLE_FILE))
             {
-                UpdateFile(parameters[TITLE_FILE], s.title);
+                UpdateFile(parameters[TITLE_FILE], s.title, prefix, postfix);
             }
 
             if (parameters.ContainsKey(ARTIST_FILE))
             {
-                UpdateFile(parameters[ARTIST_FILE], s.artist);
+                UpdateFile(parameters[ARTIST_FILE], s.artist, prefix, postfix);
             }
         }
-        private static void UpdateFile(string fileName, string content) {
+        private static void UpdateFile(string fileName, string content, string prefix, string postfix) {
             using (StreamWriter sw = new(fileName)) { 
-                sw.WriteLine(content); 
+                sw.WriteLine(prefix + content + postfix); 
             }
         }
         private static Dictionary<string, string> ParseParams(string[] args)
